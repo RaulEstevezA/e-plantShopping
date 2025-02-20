@@ -59,11 +59,11 @@ Defines the Redux logic to handle cart-related actions.
 ## Installation Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yourrepository.git
+   git clone https://github.com/RaulEstevezA/e-plantShopping.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd plantShopping
+   cd e-plantShopping
    ```
 3. Install dependencies:
    ```bash
@@ -79,4 +79,4 @@ Defines the Redux logic to handle cart-related actions.
 This project is licensed under the MIT License.
 
 ---
-Thank you for checking out the Plant Shopping Cart Application! If you have any feedback or issues, feel free to contribute or submit an issue on the [GitHub repository](https://github.com/yourusername/yourrepository).
+Thank you for checking out the Plant Shopping Cart Application! If you have any feedback or issues, feel free to contribute or submit an issue on the [GitHub repository](https://github.com/RaulEstevezA/e-plantShopping).
