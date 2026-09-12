@@ -274,7 +274,7 @@ const handlePlantsClick = (e) => {
             <div className="tag">
                 <div className="luxury">
                     <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
-                    <a href="/" style={{ textDecoration: 'none' }}>
+                    <a href="https://raulesteveza.github.io/e-plantShopping/" style={{ textDecoration: 'none' }}>
                         <div>
                             <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
                             <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
@@ -284,7 +284,7 @@ const handlePlantsClick = (e) => {
             </div>
             <div style={styleObjUl}>
                 <div>
-                    <a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a>
+                    <a href="https://raulesteveza.github.io/e-plantShopping/" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a>
                 </div>
                 <div>
                     <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
