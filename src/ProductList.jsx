@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addItem } from './CartSlice'; 
 
 function ProductList() {
+    const homeUrl = 'https://raulesteveza.github.io/e-plantShopping/';
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
@@ -272,19 +273,22 @@ const handlePlantsClick = (e) => {
     <div>
         <div className="navbar" style={styleObj}>
             <div className="tag">
-                <div className="luxury">
+                <a
+                    className="luxury"
+                    href={homeUrl}
+                    style={{ textDecoration: 'none' }}
+                    aria-label="Go to the Paradise Nursery home page"
+                >
                     <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
-                    <a href="https://raulesteveza.github.io/e-plantShopping/" style={{ textDecoration: 'none' }}>
-                        <div>
-                            <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
-                            <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
-                        </div>
-                    </a>
-                </div>
+                    <div>
+                        <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
+                        <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
+                    </div>
+                </a>
             </div>
             <div style={styleObjUl}>
                 <div>
-                    <a href="https://raulesteveza.github.io/e-plantShopping/" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a>
+                    <a href={homeUrl} onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a>
                 </div>
                 <div>
                     <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
