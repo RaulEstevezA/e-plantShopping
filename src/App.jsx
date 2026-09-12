@@ -35,11 +35,20 @@ function App() {
       <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
         <ProductList />
       </div>
+      <footer className="developer-footer">
+        Developed by{' '}
+        <a
+          href="https://raulesteveza.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Raúl Estévez
+        </a>
+      </footer>
     </div>
   );
 }
 
 export default App;
-
 
 
