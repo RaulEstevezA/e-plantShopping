@@ -4,7 +4,7 @@
 
 Proyecto final del curso de IBM **Developing Front-End Applications with React**.
 
-**Demo:** [Plant Shopping Application](https://raulpracticareact.github.io/plantShopping/)
+**Demo:** [Plant Shopping Application](https://raulesteveza.github.io/e-plantShopping/)
 
 ## Descripción General
 
