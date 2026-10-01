@@ -4,7 +4,7 @@
 
 Final project for the IBM **Developing Front-End Applications with React** course.
 
-**Demo:** [Plant Shopping Application](https://raulesteveza.github.io/e-plantShopping/)
+**Demo:** [Plant Shopping Application](https://raulesteveza.github.io/demos/e-plantShopping/)
 
 ## Overview
 
@@ -125,17 +125,17 @@ Defines the Redux cart slice with actions for adding items, removing items, and 
 
 ## Deployment
 
-Build the project with:
+Build the project locally with:
 
 ```bash
 npm run build
 ```
 
-Deploy to GitHub Pages with:
-
-```bash
-npm run deploy
-```
+Pushes to `main` automatically build the application and publish the compiled
+files to `demos/e-plantShopping/` in the
+[`RaulEstevezA.github.io`](https://github.com/RaulEstevezA/RaulEstevezA.github.io)
+portfolio repository. That destination folder is managed automatically by the
+deployment workflow and must not be edited manually.
 
 ## License
 

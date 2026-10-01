@@ -4,7 +4,7 @@
 
 Proyecto final del curso de IBM **Developing Front-End Applications with React**.
 
-**Demo:** [Plant Shopping Application](https://raulesteveza.github.io/e-plantShopping/)
+**Demo:** [Plant Shopping Application](https://raulesteveza.github.io/demos/e-plantShopping/)
 
 ## Descripción General
 
@@ -125,17 +125,17 @@ Define el slice de Redux del carrito con acciones para añadir productos, elimin
 
 ## Despliegue
 
-Compila el proyecto con:
+Compila el proyecto localmente con:
 
 ```bash
 npm run build
 ```
 
-Despliega en GitHub Pages con:
-
-```bash
-npm run deploy
-```
+Cada `push` a `main` compila automáticamente la aplicación y publica los
+archivos generados en `demos/e-plantShopping/` del repositorio del portfolio
+[`RaulEstevezA.github.io`](https://github.com/RaulEstevezA/RaulEstevezA.github.io).
+Esa carpeta de destino está gestionada automáticamente por el workflow de
+despliegue y no debe editarse manualmente.
 
 ## Licencia
 

@@ -1,25 +1,23 @@
-name: Deploy Vite app to GitHub Pages
+name: Deploy E-Plant to portfolio
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  group: deploy-e-plant-to-portfolio
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout E-Plant
         uses: actions/checkout@v4
 
       - name: Configure Node.js
@@ -34,23 +32,44 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload compiled website
-        uses: actions/upload-pages-artifact@v4
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
         with:
-          path: ./dist
+          repository: RaulEstevezA/RaulEstevezA.github.io
+          ref: main
+          token: ${{ secrets.PORTFOLIO_DEPLOY_TOKEN }}
+          path: portfolio
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      - name: Synchronize compiled application
+        run: |
+          mkdir -p portfolio/demos/e-plantShopping
+          rsync -a --delete dist/ portfolio/demos/e-plantShopping/
 
-    runs-on: ubuntu-latest
-    needs: build
+      - name: Commit and push changes
+        working-directory: portfolio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- demos/e-plantShopping/
 
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          if git diff --cached --quiet; then
+            echo "The compiled application has not changed; nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "Deploy E-Plant"
+
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            if [ "$attempt" -lt 3 ]; then
+              echo "Push attempt $attempt failed; retrying after updating main."
+              sleep 5
+            fi
+          done
+
+          echo "Unable to push the deployment after 3 attempts."
+          exit 1
