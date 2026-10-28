@@ -1,6 +1,6 @@
 # Plant Shopping Cart Application
 
-[🇪🇸 Versión en español](README_es.md)
+- 🇪🇸 **Español:** [Documentación completa](./README_es.md)
 
 Final project for the IBM **Developing Front-End Applications with React** course.
 

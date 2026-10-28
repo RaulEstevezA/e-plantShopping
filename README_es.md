@@ -1,6 +1,6 @@
 # Aplicación de Carrito de Compra de Plantas
 
-[🇬🇧 English version](README.md)
+- 🇬🇧 **English:** [Full documentation](./README.md)
 
 Proyecto final del curso de IBM **Developing Front-End Applications with React**.
 
