@@ -32,6 +32,25 @@ jobs:
       - name: Build application
         run: npm run build
 
+      - name: Verify Cloudflare Web Analytics beacon
+        run: |
+          status=0
+          files=$(find dist -name '*.html')
+          if [ -z "$files" ]; then
+            echo "::error::No HTML files found in dist/."
+            exit 1
+          fi
+          for file in $files; do
+            count=$(grep -o 'static.cloudflareinsights.com/beacon.min.js' "$file" | wc -l | tr -d ' ')
+            if [ "$count" -ne 1 ]; then
+              echo "::error file=$file::Expected the Cloudflare Web Analytics beacon exactly once, found $count."
+              status=1
+            else
+              echo "$file: beacon found once."
+            fi
+          done
+          exit $status
+
       - name: Checkout portfolio
         uses: actions/checkout@v4
         with:
